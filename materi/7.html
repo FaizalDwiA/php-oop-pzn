@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Constant</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="../assets/css/markdown.min.css">
+  <link rel="stylesheet" href="../assets/css/highlight.min.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <h1 id="constant">Constant</h1>
+  <h2 id="constant-1">Constant</h2>
+  <ul>
+    <li>Properties di class bisa diubah, mirip seperti variable</li>
+    <li>Di class juga kita membuat constant, data yang tidak bisa diubah</li>
+    <li>Di materi PHP Dasar, kita belajar untuk membuat constant itu perlu menggunakan function define()</li>
+    <li>Namun sejak PHP 7.4, kita bisa menggunakan kata kunci const untuk membuat constant, mirip seperti variable,
+      namun tidak menggunakan karakter $</li>
+  </ul>
+  <hr>
+  <h2 id="kode--constant">Kode : Constant</h2>
+  <p><em>Faizal.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&quot;APPLICATION&quot;</span>, <span class="hljs-string">&quot;Belajar PHP OOP&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">APP_VERSION</span> = <span class="hljs-string">&quot;1.0.0&quot;</span>;
+
+<span class="hljs-keyword">echo</span> APPLICATION . PHP_EOL;
+<span class="hljs-keyword">echo</span> APP_VERSION . PHP_EOL;
+</code></pre>
+  <p><strong>Hasil :</strong></p>
+  <p><img src="..\assets\img\7\1.webp" alt="1"></p>
+  <hr>
+  <h2 id="kode--constant-di-class">Kode : Constant di Class</h2>
+  <p><em>Person.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+</span>{
+    <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">AUTHOR</span> = <span class="hljs-string">&quot;Program Is Fun&quot;</span>;
+
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>;
+    <span class="hljs-keyword">var</span> ?<span class="hljs-keyword">string</span> <span class="hljs-variable">$address</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$country</span> = <span class="hljs-string">&quot;Indonesia&quot;</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">?<span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>)
+    </span>{
+        <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">is_null</span>(<span class="hljs-variable">$name</span>)) {
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hi, my name is <span class="hljs-subst">$this</span>-&gt;name&quot;</span> . PHP_EOL;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>, my name is <span class="hljs-subst">$this</span>-&gt;name&quot;</span> . PHP_EOL;
+        }
+    }
+}
+</code></pre>
+  <hr>
+  <h2 id="kode--mengakses-constant-di-class">Kode : Mengakses Constant di Class</h2>
+  <p><em>Faizal.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Person.php&quot;</span>;
+
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&quot;APPLICATION&quot;</span>, <span class="hljs-string">&quot;Belajar PHP OOP&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">APP_VERSION</span> = <span class="hljs-string">&quot;1.0.0&quot;</span>;
+
+<span class="hljs-keyword">echo</span> APPLICATION . PHP_EOL;
+<span class="hljs-keyword">echo</span> APP_VERSION . PHP_EOL;
+<span class="hljs-keyword">echo</span> <span class="hljs-title class_">Person</span>::<span class="hljs-variable constant_">AUTHOR</span> . PHP_EOL;
+</code></pre>
+
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

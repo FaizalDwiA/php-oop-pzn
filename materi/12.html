@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Namespace</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="../assets/css/markdown.min.css">
+  <link rel="stylesheet" href="../assets/css/highlight.min.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <h1 id="namespace">Namespace</h1>
+  <h2 id="namespace-1">Namespace</h2>
+  <ul>
+    <li>Saat kita membuat aplikasi, bisa dipastikan kita akan banyak sekali membuat class</li>
+    <li>Jika class terlalu banyak, kadang akan menyulitkan kita untuk mencari atau mengklasifikasikan jenis-jenis class
+    </li>
+    <li>PHP memiliki fitur namespace, dimana kita bisa menyimpan class-class kita di dalam namespace</li>
+    <li>Namespace bisa nested, dan jika kita ingin mengakses class yang terdapat di namespace, kita perlu menyebutkan
+      nama namespace nya</li>
+    <li>Namespace bagus ketika kita punya beberapa class yang sama, dengan menggunakan namespace nama class sama tidak
+      akan menjadikan error di PHP</li>
+  </ul>
+  <hr>
+  <h2 id="kode--tanpa-namespace">Kode : Tanpa Namespace</h2>
+  <p><em>Conflict.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Conflict</span> </span>{
+
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Conflict</span> </span>{
+    
+}
+</code></pre>
+  <p><em>Namespace.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Conflict.php&quot;</span>
+</code></pre>
+  <blockquote>
+    <p>Error</p>
+  </blockquote>
+  <p><strong>Hasil :</strong></p>
+  <h2 id=""><img src="..\assets\img\12\1.webp" alt="1"></h2>
+  <h2 id="membuat-namespace">Membuat Namespace</h2>
+  <ul>
+    <li>Untuk membuat namespace, kita bisa menggunakan kata kunci namespace</li>
+    <li>Jika kita ingin membuat sub namespace, kita cukup gunakan karakter \ setelah namespace sebelumnya</li>
+  </ul>
+  <hr>
+  <h2 id="kode--membuat-namespace">Kode : Membuat Namespace</h2>
+  <p><em>Data/Conflict/php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// namespace Data\One;</span>
+<span class="hljs-comment">// artinya semua clas berada di namespace Data\One</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title class_">Data</span>\<span class="hljs-title class_">One</span> {
+    <span class="hljs-title class_">class</span> <span class="hljs-title class_">Conflict</span> {
+        
+    }
+}
+
+<span class="hljs-title class_">namespace</span> <span class="hljs-title class_">Data</span>\<span class="hljs-title class_">Two</span> {
+    <span class="hljs-title class_">class</span> <span class="hljs-title class_">Conflict</span> {
+        
+    }
+}
+</code></pre>
+  <p><strong>Hasil :</strong></p>
+  <p><img src="..\assets\img\12\2.webp" alt="2"></p>
+  <hr>
+  <h2 id="kode--membuat-object-dari-namespace">Kode : Membuat Object dari Namespace</h2>
+  <p><em>Namespace.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Conflict.php&quot;</span>;
+
+<span class="hljs-variable">$conflict1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+<span class="hljs-variable">$conflict2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+</code></pre>
+  <hr>
+  <h2 id="function-dan-constant-di-namespace">Function dan Constant di Namespace</h2>
+  <ul>
+    <li>Selain class, kita juga menggunakan function dan constant di namespace</li>
+    <li>Dan jika kita ingin menggunakan function atau constant tersebut, kita bisa menggunakannya dengan diawali dengan
+      nama namespace nya</li>
+  </ul>
+  <hr>
+  <h2 id="kode--function-dan-constant-di-namespace">Kode : Function dan Constant di Namespace</h2>
+  <p><em>data/Helper.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title class_">Helper</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">helpMe</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;HELP ME&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">APPLICATION</span> = <span class="hljs-string">&quot;Belajar PHP OOP&quot;</span>;
+</code></pre>
+  <p><em>Namespace.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Conflict.php&quot;</span>;
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Helper.php&quot;</span>;
+
+<span class="hljs-variable">$conflict1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+<span class="hljs-variable">$conflict2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+
+<span class="hljs-keyword">echo</span> Helper\APPLICATION . PHP_EOL;
+Helper\<span class="hljs-title function_ invoke__">helpMe</span>();
+</code></pre>
+  <p><strong>Hasil :</strong></p>
+  <h2 id="-1"><img src="..\assets\img\12\3.webp" alt="3"></h2>
+  <h2 id="global-namespace">Global Namespace</h2>
+  <ul>
+    <li>Secara default saat kita membuat kode di PHP sebenarnya itu disimpan di global namespace</li>
+    <li>Global namespace adalah namespace yang tidak memiliki nama namespace</li>
+  </ul>
+  <hr>
+  <h2 id="kode--global-namespace">Kode : Global Namespace</h2>
+  <p><em>Namespace.php</em></p>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Conflict.php&quot;</span>;
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Helper.php&quot;</span>;
+
+<span class="hljs-variable">$conflict1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+<span class="hljs-variable">$conflict2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+
+<span class="hljs-keyword">echo</span> Helper\APPLICATION . PHP_EOL;
+Helper\<span class="hljs-title function_ invoke__">helpMe</span>();
+</code></pre>
+  <blockquote>
+    <p>Sebenarnya seperti ini</p>
+  </blockquote>
+  <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> {
+    <span class="hljs-title class_">require_once</span> &quot;<span class="hljs-title class_">data</span>/<span class="hljs-title class_">Conflict</span>.<span class="hljs-title class_">php</span>&quot;;
+    <span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;data/Helper.php&quot;</span>;
+
+    <span class="hljs-variable">$conflict1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+    <span class="hljs-variable">$conflict2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data\One\Conflict</span>();
+
+    <span class="hljs-keyword">echo</span> Helper\APPLICATION . PHP_EOL;
+    Helper\<span class="hljs-title function_ invoke__">helpMe</span>();
+}
+</code></pre>
+  <blockquote>
+    <p>jika tidak membuat namespace, defaultnya seperti ini
+      tidak akan error dan hasilnya sama saja</p>
+  </blockquote>
+
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

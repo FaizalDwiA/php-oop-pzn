@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exception</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+
+  <link rel="stylesheet" href="../assets/css/markdown.min.css">
+  <link rel="stylesheet" href="../assets/css/highlight.min.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <h1 id="exception">Exception</h1>
+  <h2 id="exception-1">Exception</h2>
+  <ul>
+    <li>Saat kita membuat aplikasi, kita tidak akan terhindar dengan yang namanya error</li>
+    <li>Di PHP, error direpresentasikan dengan istilah exception, dan semua direpresentasikan dalam bentuk class
+      exception</li>
+    <li>Kita bisa menggunakan class exception sendiri, atau menggunakan yang sudah disediakan oleh PHP</li>
+    <li>Jika kita ingin membuat exception, maka kita harus membuat class yang implement interface Throwable atau
+      turunan-turunannya</li>
+  </ul>
+  <hr>
+  <h2 id="kode--membuat-class-exception">Kode : Membuat Class Exception</h2>
+  <hr>
+  <h2 id="membuat-exception">Membuat Exception</h2>
+  <ul>
+    <li>Exception biasanya terjadi di function</li>
+    <li>Di dalam kode program kita, untuk membuat exception kita cukup menggunakan kata kunci throw, diikuti dengan
+      object exception nya</li>
+  </ul>
+  <hr>
+  <h2 id="kode--membuat-exception">Kode : Membuat Exception</h2>
+  <hr>
+  <h2 id="try-catch">Try Catch</h2>
+  <ul>
+    <li>Saat kita memanggil sebuah function yang bisa menyebabkan exception, maka kita disarankan menggunakan try-catch
+      expression di PHP</li>
+    <li>Ini gunanya agar kita bisa menangkap exception yang terjadi, karena jika tidak ditangkap, lalu terjadi
+      exception, maka secara otomatis program kita akan berhenti</li>
+    <li>Cara menggunakan try-catch expression di PHP sangat mudah, di block try, kita tinggal panggil method yang bisa
+      menyebabkan exception, dan di block catch, kita bisa melakukan sesuatu jika terjadi exception</li>
+  </ul>
+  <hr>
+  <h2 id="kode--try-catch">Kode : Try Catch</h2>
+  <hr>
+  <h2 id="kode--multiple-try-catch-1">Kode : Multiple Try Catch (1)</h2>
+  <hr>
+  <h2 id="kode--multiple-try-catch-2">Kode : Multiple Try Catch (2)</h2>
+  <hr>
+  <h2 id="finally-keyword">Finally Keyword</h2>
+  <ul>
+    <li>Dalam try-catch, kita bisa menambahkan block finally</li>
+    <li>Block finally ini adalah block dimana akan selalu dieksekusi baik terjadi exception ataupun tidak</li>
+    <li>Ini sangat cocok ketika kita ingin melakukan sesuatu, tidak peduli sukses ataupun gagal, misal di block try kita
+      ingin membaca file, di block catch kita akan tangkap jika terjadi error, dan di block finally error ataupun sukses
+      membaca file, kita wajib menutup koneksi ke file tersebut, biar tidak menggantung di memory</li>
+  </ul>
+  <hr>
+  <h2 id="kode--finally">Kode : Finally</h2>
+  <hr>
+  <h2 id="debug-exception">Debug Exception</h2>
+  <ul>
+    <li>Exception di PHP memiliki sebuah function bernama getTrace()</li>
+    <li>Function getTrace() berisikan informasi dari exception yang terjadi, seperti lokasi file, baris ke berapa,
+      function mana sampai argumenty yang dikirim di function tersebut apa</li>
+    <li>Ini sangat cocok untuk kita jika ingin mendebug ketika terjadi exception</li>
+  </ul>
+  <hr>
+  <h2 id="kode--debug-exception">Kode : Debug Exception</h2>
+
+
+
+</body>
+
+</html>

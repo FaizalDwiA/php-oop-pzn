@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Overloading</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="../assets/css/markdown.min.css">
+  <link rel="stylesheet" href="../assets/css/highlight.min.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <h1 id="overloading">Overloading</h1>
+  <h2 id="overloading-1">Overloading</h2>
+  <ul>
+    <li>Overloading adalah kemampuan secara dinamis membuat properties atau function</li>
+    <li>Ini mirip meta programming di bahasa pemrograman lain seperti Ruby</li>
+    <li>Namun ini berbeda dengan function overloading di bahasa pemrograman lain seperti Java</li>
+    <li>Overloading ini erat kaitannya dengan magic function yang sebelumnya sudah kita bahas</li>
+  </ul>
+  <hr>
+  <h2 id="properties-overloading">Properties Overloading</h2>
+  <ul>
+    <li>Saat kita mengakses properties, maka secara otomatis properties akan diakses</li>
+    <li>Namun jika ternyata properties tersebut tidak tersedia di objectnya, maka PHP tidak secara otomatis menjadikan
+      itu error</li>
+    <li>PHP akan melakukan fallback ke magic function</li>
+    <li>Dengan demikian kita bisa membuat properties secara dinamis dengan memanfaatkan magic function tersebut</li>
+    <li>Ada beberapa magic function yang bisa kita gunakan untuk properties overloading</li>
+  </ul>
+  <hr>
+  <h2 id="magic-function-untuk-properties-overloading">Magic Function untuk Properties Overloading</h2>
+  <p>Magic Function Keterangan
+    __set($name, $value) : void Dieksekusi ketika mengubah properties yang tidak
+    tersedia
+    __get($name) : mixed Dieksekusi ketika mengakses properties yang tidak
+    tersedia
+    __isset ($name ) : bool Dieksekusi ketika mengecek isset() atau empty()
+    properties yang tidak tersedia
+    __unset($name) : void Dieksekusi ketika menggunakan unset() properties yang
+    tidak tersedia</p>
+  <hr>
+  <h2 id="kode--properties-overloading">Kode : Properties Overloading</h2>
+  <hr>
+  <h2 id="function-overloading">Function Overloading</h2>
+  <ul>
+    <li>Saat kita mengakses function, maka secara otomatis function akan diakses</li>
+    <li>Namun jika ternyata function tersebut tidak tersedia di objectnya, maka PHP tidak secara otomatis menjadikan itu
+      error</li>
+    <li>PHP akan melakukan fallback ke magic function</li>
+    <li>Dengan demikian kita bisa membuat function secara dinamis dengan memanfaatkan magic function tersebut</li>
+    <li>Ada beberapa magic function yang bisa kita gunakan untuk function overloading</li>
+  </ul>
+  <hr>
+  <h2 id="magic-function-untuk-function-overloading">Magic Function untuk Function Overloading</h2>
+  <hr>
+  <h2 id="magic-function-keterangan">Magic Function Keterangan</h2>
+  <p>__call ( $name , $arguments ) : mixed Dieksekusi ketika memanggil function yang tidak tersedia
+    static __callStatic ( $name , $arguments ) :
+    mixed
+    Dieksekusi ketika memanggil static function yang tidak tersedia</p>
+  <hr>
+  <h2 id="kode--function-overloading">Kode : Function Overloading</h2>
+
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>
